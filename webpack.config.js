@@ -21,6 +21,10 @@ module.exports = {
  "module": {
    "rules": [
      {
+       test: /\.bin/,
+       type: 'asset/resource'
+     },
+     {
        "test": /\.css$/,
        "use": [
          "style-loader",
