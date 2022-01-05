@@ -21,7 +21,7 @@ vectors = []
 
 for line in row:
     word = line.split()[0]
-    if len(word) >= 3 and len(word) <= 5:
+    if len(word) >= 3 and len(word) <= 6:
         if word in english_words:
             w = word
             v = np.array([float(x) for x in line.split()[1:]])
