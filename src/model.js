@@ -47,13 +47,17 @@ export function similarity(a,b) {
     memoized[a] = {};
   }
 
-  let result = dot(model[a],model[b]) / norm(model[a]) / norm(model[b]);
+  if (model[a] && model[b]) {
+    let result = dot(model[a],model[b]) / norm(model[a]) / norm(model[b]);
 
-  if (result > 1) result = 1;
-  if (result < -1) result = -1;
+    if (result > 1) result = 1;
+    if (result < -1) result = -1;
 
-  memoized[a][b] = result;
+    memoized[a][b] = result;
 
-  return result; 
+    return result;
+  }
+
+  return -1;
 }
 

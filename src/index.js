@@ -114,9 +114,11 @@ function step(timestamp) {
   }
 
   // push centered word to middle of the screen
-  let s = sprites[centeredWord];
-  s.dx += (0.5 - s.x) * 1.5;
-  s.dy += (0.5 - s.y) * 1.5;
+  if (sprites[centeredWord]) {
+    let s = sprites[centeredWord];
+    s.dx += (0.5 - s.x) * 1.5;
+    s.dy += (0.5 - s.y) * 1.5;
+  }
 
   // synchronize internal state with DOM elements
   for(const w of Object.keys(sprites)) {
